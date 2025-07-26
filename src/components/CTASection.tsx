@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { containerVariants, itemVariants } from '../utils/animations';
 
 const CTASection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,28 +24,7 @@ const CTASection: React.FC = () => {
     }
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   return (
     <section ref={sectionRef} className="relative py-20 overflow-hidden">

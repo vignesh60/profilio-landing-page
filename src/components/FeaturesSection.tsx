@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { containerVariants, itemVariantsSmall } from '../utils/animations';
 
 const FeaturesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -80,28 +81,7 @@ const FeaturesSection: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   const renderMockup = (type: string) => {
     switch (type) {
@@ -243,7 +223,7 @@ const FeaturesSection: React.FC = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             One Profile, Infinite Possibilities
           </motion.h2>

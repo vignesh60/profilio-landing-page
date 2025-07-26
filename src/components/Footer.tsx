@@ -1,29 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { containerVariants, itemVariantsSmall } from '../utils/animations';
 
 const Footer: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   const footerLinks = {
     Product: ['Features', 'Templates', 'Pricing', 'Integrations'],
@@ -50,7 +30,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* Brand section */}
-          <motion.div className="lg:col-span-2" variants={itemVariants}>
+          <motion.div className="lg:col-span-2" variants={itemVariantsSmall}>
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">P</span>
@@ -77,7 +57,7 @@ const Footer: React.FC = () => {
 
           {/* Links sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <motion.div key={category} variants={itemVariants}>
+            <motion.div key={category} variants={itemVariantsSmall}>
               <h3 className="font-semibold text-white mb-4">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
@@ -107,7 +87,7 @@ const Footer: React.FC = () => {
         >
           <motion.div
             className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             <div className="text-center md:text-left">
               <h3 className="font-semibold text-white mb-2">Stay updated</h3>
@@ -140,13 +120,13 @@ const Footer: React.FC = () => {
         >
           <motion.p
             className="text-gray-400 text-sm"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             © 2024 Profilio. All rights reserved.
           </motion.p>
           <motion.div
             className="flex items-center space-x-6 text-sm text-gray-400"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>

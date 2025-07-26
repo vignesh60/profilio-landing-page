@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { containerVariants, itemVariantsUp } from '../utils/animations';
 
 const TestimonialsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -63,28 +64,7 @@ const TestimonialsSection: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, i) => (
@@ -111,13 +91,13 @@ const TestimonialsSection: React.FC = () => {
         >
           <motion.p
             className="text-blue-600 font-semibold text-lg mb-4"
-            variants={itemVariants}
+            variants={itemVariantsUp}
           >
             DEVELOPERS LOVE
           </motion.p>
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
-            variants={itemVariants}
+            variants={itemVariantsUp}
           >
             Trusted by Coders Worldwide
           </motion.h2>
@@ -187,7 +167,7 @@ const TestimonialsSection: React.FC = () => {
             <motion.div
               key={stat.label}
               className="text-center"
-              variants={itemVariants}
+              variants={itemVariantsUp}
             >
               <motion.div
                 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2"

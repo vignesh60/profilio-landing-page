@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { containerVariants, itemVariantsSmall } from '../utils/animations';
 
 const ToolsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -45,28 +46,7 @@ const ToolsSection: React.FC = () => {
     { name: 'Opera', color: 'bg-red-600', icon: 'O' },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   return (
     <section ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
@@ -80,13 +60,13 @@ const ToolsSection: React.FC = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             <span className="text-blue-600">CONNECT YOUR TOOLS</span>
           </motion.h2>
           <motion.p
             className="text-xl text-gray-600 max-w-2xl mx-auto"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
           >
             Seamlessly integrate with your favorite development tools and showcase your workflow
           </motion.p>
@@ -131,7 +111,7 @@ const ToolsSection: React.FC = () => {
           {/* API Integration */}
           <motion.div
             className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >
@@ -161,7 +141,7 @@ const ToolsSection: React.FC = () => {
           {/* Analytics */}
           <motion.div
             className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >
@@ -186,7 +166,7 @@ const ToolsSection: React.FC = () => {
           {/* Deployment */}
           <motion.div
             className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
-            variants={itemVariants}
+            variants={itemVariantsSmall}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >

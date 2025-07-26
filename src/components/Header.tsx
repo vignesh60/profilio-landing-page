@@ -47,7 +47,7 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.2 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                delay={index * 0.1}
+                transition={{ delay: index * 0.1 }}
               >
                 {item}
               </motion.a>

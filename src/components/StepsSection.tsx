@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { containerVariants, itemVariantsUp } from '../utils/animations';
 
 const StepsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -50,28 +51,7 @@ const StepsSection: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   return (
     <section ref={sectionRef} className="py-20 bg-white">
@@ -85,13 +65,13 @@ const StepsSection: React.FC = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-            variants={itemVariants}
+            variants={itemVariantsUp}
           >
             Build Your Perfect Portfolio in 3 Steps
           </motion.h2>
           <motion.p
             className="text-xl text-gray-600 max-w-2xl mx-auto"
-            variants={itemVariants}
+            variants={itemVariantsUp}
           >
             Simple, fast, and professional. Get your portfolio online in minutes.
           </motion.p>
@@ -152,7 +132,7 @@ const StepsSection: React.FC = () => {
             <motion.div
               key={index}
               className="relative group cursor-pointer"
-              variants={itemVariants}
+              variants={itemVariantsUp}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
